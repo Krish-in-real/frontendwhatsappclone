@@ -1,0 +1,10 @@
+services:
+  - type: static_site
+    name: your-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
